@@ -51,3 +51,10 @@ cd 你的项目
 ```
 
 成员打开项目即自动获得整套 harness。
+
+## 安全与已知限制
+
+- Stop hook 会自动执行项目根目录的 `.harness/verify.sh`。**打开来历不明的仓库前注意**：该文件属于项目方可控代码（与 npm scripts 同级风险），信任边界依赖 Claude Code 的工作区信任机制。
+- 验证脚本执行有 540 秒超时（hook 总超时 600 秒），慢测试套件应拆分或只跑受影响子集。
+- hook 为 bash 脚本，Windows 原生环境需 WSL/Git Bash。
+
