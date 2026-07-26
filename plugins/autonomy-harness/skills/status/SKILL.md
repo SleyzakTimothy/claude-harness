@@ -20,7 +20,9 @@ description: 跨会话状态恢复与汇报：读取 PROGRESS.md、git 历史和
 ## 上次进展
 （最近完成的 2-3 件事，来自 git log 与 PROGRESS.md）
 ## 下一步
-（明确的单个建议动作，而非选项列表）
+（明确的单个建议动作，并给出可直接复制的命令形式，例如
+ `/autonomy-harness:closed-loop 完成消息撤回功能` 或 `/autonomy-harness:ship`；
+ 绝不罗列多个选项让用户挑）
 ## 卡点/风险
 （未提交的半成品、失败的验证、过时的进度文件等；没有就写"无"）
 ```

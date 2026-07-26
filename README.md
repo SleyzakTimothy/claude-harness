@@ -10,6 +10,7 @@
 
 | 组件 | 作用 |
 |---|---|
+| `go` 技能 | **万能入口**：自动分析项目状态与诉求，路由到正确命令并直接执行；只记这一个命令就够 |
 | `closed-loop` 技能 | 五步闭环协议：规格锁定 → 定义可执行验证 → 执行-验证循环 → 独立终审 → 提交/更新进度 |
 | `harness-init` 技能 | 一条命令为任意项目初始化 harness（verify.sh、PROGRESS.md、git、CLAUDE.md 协议） |
 | `status` 技能 | 跨会话状态恢复：读进度文件+git+验证现状，汇报"在哪/下一步/卡点"，新会话第一条命令 |
@@ -31,11 +32,22 @@
 
 ## 使用
 
+最简用法——只记一个命令，路由交给 AI：
+
 ```
 cd 你的项目
-/autonomy-harness:harness-init        # 首次：初始化 verify.sh、PROGRESS.md、git
-/autonomy-harness:closed-loop <任务>  # 之后：闭环执行任何任务
+/autonomy-harness:go <一句话需求>     # 自动判断该初始化/调研/执行/部署，并直接做完
+/autonomy-harness:go                  # 不带参数 = 恢复状态并告知下一步
 ```
+
+命令的标准先后顺序（`go` 会自动遵循；手动调用时参考）：
+
+```
+harness-init（每项目一次）→ status（每次新会话）→ closed-loop（每个任务）→ ship（要发布时）
+                                      ↑ 技术路线不清时，closed-loop 前先调研（deep-research）
+```
+
+每个命令收尾时都会给出可直接复制的下一步建议命令，跟着提示走即可。
 
 安装后 Stop hook 自动生效：只要项目里有 `.harness/verify.sh`，验证不通过 Claude 就无法宣告完成。
 
