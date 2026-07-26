@@ -1,0 +1,19 @@
+{
+  "name": "migoachi-plugins",
+  "owner": {
+    "name": "migoachi",
+    "email": "migoachi@gmail.com"
+  },
+  "description": "个人 AI 自主工作流插件集：闭环 harness 等",
+  "plugins": [
+    {
+      "name": "autonomy-harness",
+      "source": "./plugins/autonomy-harness",
+      "displayName": "Autonomy Harness",
+      "description": "闭环自主工作流：可执行验证 + Stop hook 完成度门控 + 独立验证子代理 + 进度文件跨会话协议",
+      "category": "workflow",
+      "tags": ["autonomy", "verification", "harness"],
+      "defaultEnabled": true
+    }
+  ]
+}
