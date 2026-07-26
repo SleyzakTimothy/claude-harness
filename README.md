@@ -12,6 +12,8 @@
 |---|---|
 | `closed-loop` 技能 | 五步闭环协议：规格锁定 → 定义可执行验证 → 执行-验证循环 → 独立终审 → 提交/更新进度 |
 | `harness-init` 技能 | 一条命令为任意项目初始化 harness（verify.sh、PROGRESS.md、git、CLAUDE.md 协议） |
+| `status` 技能 | 跨会话状态恢复：读进度文件+git+验证现状，汇报"在哪/下一步/卡点"，新会话第一条命令 |
+| `ship` 技能 | 部署闭环：预检 → 回滚点 → 构建部署 → 健康检查 → 失败自动回滚 |
 | `verifier` 子代理 | 新鲜上下文独立验收，不信任执行者的自我报告 |
 | Stop hook | `.harness/verify.sh` 不通过时强制阻止收工 |
 
