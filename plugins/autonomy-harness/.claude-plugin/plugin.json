@@ -1,7 +1,7 @@
 {
   "name": "autonomy-harness",
   "description": "闭环自主工作流 harness：为每个任务定义可执行的通过/失败验证，Stop hook 阻止未通过验证就收工，新鲜上下文子代理终审，进度文件 + git 支撑跨会话续作",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": {
     "name": "migoachi",
     "email": "migoachi@gmail.com"
