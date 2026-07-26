@@ -23,7 +23,7 @@
 /plugin install autonomy-harness@migoachi-plugins
 
 # 推到 GitHub 后，任何机器：
-/plugin marketplace add <owner>/<repo>
+/plugin marketplace add SleyzakTimothy/claude-harness
 /plugin install autonomy-harness@migoachi-plugins
 ```
 
@@ -44,7 +44,7 @@ cd 你的项目
 ```json
 {
   "extraKnownMarketplaces": {
-    "migoachi-plugins": { "source": { "source": "github", "repo": "<owner>/<repo>" } }
+    "migoachi-plugins": { "source": { "source": "github", "repo": "SleyzakTimothy/claude-harness" } }
   },
   "enabledPlugins": { "autonomy-harness@migoachi-plugins": true }
 }
